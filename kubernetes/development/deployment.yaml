@@ -17,7 +17,7 @@ spec:
         app: solar-system
     spec:
       containers:
-      - image: msoliman427/solar-system:${{ github.sha }}
+      - image: msoliman427/solar-system:__IMAGE_TAG__
         imagePullPolicy: Always
         name: solar-system
         ports:

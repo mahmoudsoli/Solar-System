@@ -153,9 +153,10 @@ jobs:
           run: |
             aws eks update-kubeconfig --name eks-dev-cluster --region us-east-1
 
-        - name: Replace image tag with GitHub SHA
+        - name: Replace image tag placeholder with GitHub SHA
           run: |
-            sed -i "s|\${{ github.sha }}|${{ github.sha }}|g" kkubernetes/develoment/deployment.yaml
+            sed -i "s|__IMAGE_TAG__|${{ github.sha }}|g" kkubernetes/develoment/deployment.yaml
+          
 
         - name: Deploy to EKS
           run: |
