@@ -155,7 +155,7 @@ jobs:
 
         - name: Replace image tag placeholder with GitHub SHA
           run: |
-            sed -i "s|__IMAGE_TAG__|${{ github.sha }}|g" kkubernetes/develoment/deployment.yaml
+            sed -i "s|__IMAGE_TAG__|${{ github.sha }}|g" kubernetes/develoment/deployment.yaml
           
 
         - name: Deploy to EKS
