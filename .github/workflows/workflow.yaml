@@ -133,7 +133,7 @@ jobs:
                 trivy image --exit-code 1 --severity CRITICAL --no-progress msoliman427/solar-system:${{ github.sha }}
 
             - name: Push image to Docker Hub
-              if: success()  # Push image only if the scan was successful
+              if: success()  
               uses: docker/build-push-action@v5
               with:
                 context: .
